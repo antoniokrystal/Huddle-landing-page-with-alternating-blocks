@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Huddle landing page with alternating feature blocks</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    
+    body{
+      margin: unset;
+    }
+
+    h1{
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .test-400{
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+    }
+
+    .test-700{
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+    }
+
+    .hero-section{
+      background-image: url(images/bg-hero-desktop.svg);
+    }
+
+    .logo-button-nav {
+      display: flex;
+      justify-content: space-between;     
+      height: 100%;
+      padding: 15px;
+      margin-left: 5%;
+      margin-right: 5%;
+      gap: 5px;
+    }
+
+    .logo-button-nav > div{
+      padding: 8px;
+      }
+
+    .nav-button{
+      border-radius: 50px;
+      padding: 10px 50px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      border: none;
+      box-shadow: 2px 2px #888888;
+      background-color: #ffffff;
+      color: hsl(192, 100%, 9%);
+      cursor: pointer;
+    }
+
+    .nav-button:hover{
+      color: hsl(208, 11%, 55%);
+    }
+
+    .call-to-action {
+      display: flex;
+      justify-content: center;     
+      height: 100%;
+      padding: 15px;
+      gap: 40px;
+      margin-left: 5%;
+      margin-right: 5%;
+      }
+
+
+    .action-text{
+      color: hsl(192, 100%, 9%);
+      width: 500px;
+      padding: 100px 0px;
+    }
+
+    .action-text p{
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      text-align: left;
+    }
+
+    .illusttration-mockups{
+      width: 650px;
+    }
+
+    .call-act-btn{
+      border-radius: 50px;
+      padding: 20px 80px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      border: none;
+      background-color:hsl(322, 100%, 66%);
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .call-act-btn:hover{
+      opacity: .6;
+    }
+
+    .card-item {
+      display: flex;
+      justify-content: center;     
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+      margin: 10% 5%;
+      box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);
+      border-radius: 5px;
+    }
+
+    .card-item > div{
+      width: 500px;
+    }
+
+    .card-text{
+      padding: 100px;
+    }
+
+    .card-text h1{
+      color: hsl(192, 100%, 9%);
+    }
+
+    .card-text p{
+      color: hsl(208, 11%, 55%);
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+    }
+
+    .card-image img{
+      width: 500px;
+    }
+
+    .card-item-no-rev {
+      display: flex;
+      justify-content: center;     
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+      margin: 10% 5%;
+      box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2);
+      border-radius: 5px;
+    }
+
+    .card-item-no-rev > div{
+      width: 500px;
+    }
+
+    .card-text-no-rev {
+      padding: 100px;
+    }
+
+    .card-text-no-rev  h1{
+      color: hsl(192, 100%, 9%);
+    }
+
+    .card-text-no-rev  p{
+      color: hsl(208, 11%, 55%);
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+    }
+
+    .card-image-no-rev img{
+      width: 500px;
+    }
+
+    .build-section {
+      display: flex;
+      justify-content: center;     
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+      
+      }
+
+    .build-section > div{
+      box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      padding: 8px;
+      color: hsl(192, 100%, 9%);
+      width: 600px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      z-index: 99;
+      background-color: #ffffff;
+    }
+
+    .build-section-btn{
+      border-radius: 50px;
+      padding: 20px 80px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      border: none;
+      background-color:hsl(322, 100%, 66%);
+      color: #ffffff;
+      cursor: pointer;
+      margin: 8% 0;
+      box-shadow: 0px 0px 30px 1px rgba(0,0,0,0.2);
+    }
+
+    .build-section-btn:hover{
+      opacity: .6;
+    }
+
+    .footer{
+      margin-top: -10%;
+      padding-top: 10%;
+      background-color: hsl(192, 100%, 9%);
+    }
+
+    .footer-section{
+      display: flex;
+      justify-content: space-between;     
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+      margin-left: 5%;
+      margin-right: 5%; 
+    }
+
+    .footer-section > div{
+      border-radius: 5px;
+      padding: 8px;
+    }
+
+    .f-1-section {
+      display: flex;      
+      flex-direction: column;  
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+    }
+
+    .f-1-section > div{
+      padding: 8px;
+    }
+
+    .f-1st-content{
+        display: flex;
+        justify-content: flex-start;  
+        flex-direction: row;  
+        height: 100%;
+        padding: 15px;
+        gap: 5px;
+    }
+
+    .f-1st-content > div{
+        border-radius: 5px;
+        padding: 0px;
+    }
+
+    .f-des{
+      width: 300px;
+    }
+
+    .f-des p{
+      color: #ffffff;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .footer-logo{
+      filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(156deg) brightness(105%) contrast(101%);
+    }
+
+    .f-2-section{
+      display: flex;
+      justify-content: center;  
+      flex-direction: row;  
+      height: 100%;
+      padding: 15px;
+      gap: 5px;
+    }
+
+    .f-2-section > div{
+      padding: 8px;
+      width: 150px;
+    }
+
+    .footer-nav{
+      color: #ffffff;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      text-decoration: none;
+    }
+
+    ion-icon {
+      font-size: 32px;
+      color: #ffffff;
+    }
+
+    @media only screen and (max-width: 425px) {
+
+      .nav-button{
+        width: 150px;
+        padding: 10px 0;
+      }
+
+      .logo img{
+        width: 150px;
+        margin: 15px 0px;
+      }
+
+      .logo-button-nav{
+        margin-right: unset;
+        margin-left: unset;
+      }
+
+      .call-to-action{
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .action-text{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 50px 0;
+      }
+
+      .action-text h1{
+        text-align: center;
+      }
+
+      .action-text p{
+        text-align: center;
+      }
+
+      .illusttration-mockups{
+        width: 350px;
+      }
+
+      .card-item{
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+
+      .card-item-no-rev {
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .card-image-no-rev img{
+        width: 300px;
+      }
+
+      .card-item-no-rev > div{
+        width: 300px;
+        text-align: center;
+      }
+
+      .card-text-no-rev {
+        padding: 10px;
+      }
+      
+      .card-image img{
+        width: 300px;
+      }
+
+      .card-item > div{
+        width: 300px;
+        text-align: center;
+      }
+
+      .card-text {
+        padding: 10px;
+      }
+
+      .build-card h1{
+        text-align: center;
+      }
+
+      .footer-section{
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+  </style>
+
+  
+</head>
+<body>
+
+  <div class="hero-section">
+    <div class="logo-button-nav">
+      <div class="logo">
+        <img src="images/logo.svg" alt="">
+      </div>
+      <div class="item2">
+        <button class="nav-button">
+          Try It Free
+        </button>
+      </div>
+    </div>
+
+    <div class="call-to-action">
+      <div class="action-text">
+        <h1>Build The Community Your Fans Will Love</h1>
+        <p> Huddle re-imagines the way we build communities. You have a voice, but so does your audience. 
+          Create connections with your users as you engage in genuine discussion. 
+        </p>
+        <button class="call-act-btn">
+          Get Started For Free
+        </button>
+      </div>
+      <div class="action-image">
+        <img src="images/illustration-mockups.svg" class="illusttration-mockups" alt="">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="card-content">
+    <div class="card-item">
+      <div class="card-text">
+        <h1>Grow Together</h1>
+        <p> Generate meaningful discussions with your audience and build a strong, loyal community. 
+          Think of the insightful conversations you miss out on with a feedback form. </p>
+      </div>
+      <div class="card-image">
+        <img src="images/illustration-grow-together.svg" class="grow-together" alt="">
+      </div>
+    </div>
+
+    <div class="card-item-no-rev">
+      <div class="card-image-no-rev">
+        <img src="images/illustration-flowing-conversation.svg" class="grow-together" alt="">
+      </div>
+      <div class="card-text-no-rev">
+        <h1>Flowing Conversations</h1>
+        <p> You wouldn't paginate a conversation in real life, so why do it online? Our threads 
+          have just-in-time loading for a more natural flow.</p>
+      </div>
+    </div>
+
+    <div class="card-item">
+      <div class="card-text">
+        <h1>Your Users</h1>
+        <p> It takes no time at all to integrate Huddle with your app's authentication solution. 
+          This means, once signed in to your app, your users can start chatting immediately.</p>
+      </div>
+      <div class="card-image">
+        <img src="images/illustration-your-users.svg" class="grow-together" alt="">
+      </div>
+    </div>
+  </div>
+
+  <div class="build-section">
+    <div class="build-card">
+      <h1>Ready To Build Your Community?</h1>
+      <button class="build-section-btn"> Get Started For Free</button>
+    </div>
+  </div>
+
+  <div class="footer">
+
+    <div class="footer-section">
+      <div class="f-1-section">
+        <div class="item-1">
+          <img src="images/logo.svg" class="footer-logo" alt="">
+        </div>
+        <div class="f-1st-content">
+          <div class="item1">
+            <img src="images/icon-location.svg" alt="">
+          </div>
+          <div class="f-des">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+              incididunt ut labore et dolore magna aliqua</p>
+          </div>
+        </div>
+        <div class="f-1st-content">
+          <div class="item1">
+            <img src="images/icon-phone.svg" alt="">
+          </div>
+          <div class="f-des">
+            <p> +1-543-123-4567</p>
+          </div>
+        </div>
+        <div class="f-1st-content">
+          <div class="item1">
+            <img src="images/icon-email.svg" alt="">
+          </div>
+          <div class="f-des">
+            <p>example@huddle.com</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="f-2-section">
+        <div class="item1">
+          <a href="#" class="footer-nav"><p>About Us</p></a>
+          <a href="#" class="footer-nav"><p>What We Do</p></a>
+          <a href="#" class="footer-nav"><p>FAQ</p></a>
+        </div>
+        <div class="item2">
+          <a href="#" class="footer-nav"><p> Career</p></a>
+          <a href="#" class="footer-nav"><p>Blog</p></a>
+          <a href="#" class="footer-nav"><p>Contact Us</p></a>
+        </div>
+      </div>
+
+      <div class="f-3-section">
+        <ion-icon name="logo-facebook"></ion-icon>
+        <ion-icon name="logo-twitter"></ion-icon>
+        <ion-icon name="logo-instagram"></ion-icon>
+      </div>  
+    </div>
+
+  </div>
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">K-t</a>.
+    </p>
+  </footer>
+</body>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</html>
